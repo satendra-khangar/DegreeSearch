@@ -1,0 +1,175 @@
+<div class="row navbar-default">
+  
+    <div class="col-lg-12"><h2>Referral Form</h2> </div>
+
+  <%= form_tag({:action => :search, :controller => :home}, {:method => :post}) do %>
+
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= label_tag :address1, 'Address1'%>
+        <%= text_field_tag 'referral[address1]', nil, {:class => "form-control" } %>
+      </div>
+      
+      <div class="form-group">
+        <%= label_tag :address2, 'Address2'%>
+        <%= text_field_tag 'referral[address2]', nil, {:class => "form-control" } %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag 'referral[age_level]', 'Age Level'%>
+        <%= text_field_tag 'referral[age_level]', nil, {:class => "form-control" } %>
+      </div>
+
+
+      <div class="form-group">
+        <%= label_tag 'referral[city]', " City"%>
+        <%= text_field_tag 'referral[city]', nil, {:class => "form-control" } %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :degree_level, 'Degree level'%>
+        <%= text_field_tag 'referral[degree_level_id]', nil, {:class => "form-control" } %>
+      </div>
+
+
+      <div class="form-group">
+        <%= label_tag :education_level_id, 'Education level '%>
+        <%= text_field_tag 'referral[education_level_id]', nil, {:class => "form-control" } %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :email, 'Email'%>
+        <%= text_field_tag 'referral[email]', nil, {:class => "form-control" } %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :extended_leadid_token, 'Extendid leadid token'%>
+        <%= text_field_tag 'referral[extended_leadid_token]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :first_name, 'First Name'%>
+        <%= text_field_tag 'referral[first_name]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :last_name, 'Last Name'%>
+        <%= text_field_tag 'referral[last_name]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :gender, 'Gender'%>
+        <%= text_field_tag 'referral[gender]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :hs_grad_year, 'Hs Grad Year'%>
+        <%= text_field_tag 'referral[hs_grad_year]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :zip, 'Zip'%>
+        <%= text_field_tag 'referral[zip]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :zip, 'Lead Process Name'%>
+        <%= text_field_tag 'referral[lead_process_name]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :zip, 'Military Affiliation'%>
+        <%= text_field_tag 'referral[military_affiliation]', nil, {:class => "form-control"} %>
+      </div>
+
+      
+
+
+    </div>
+
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= label_tag :zip, 'Military Branch'%>
+        <%= text_field_tag 'referral[military_branch]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :zip, 'Military Relationship'%>
+        <%= text_field_tag 'referral[military_relationship]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :zip, 'Military Status'%>
+        <%= text_field_tag 'referral[military_status]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :months_until_start, 'Months until start'%>
+         <%= text_field_tag 'referral[months_until_start]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :phone1, 'Phone 1'%>
+        <%= text_field_tag 'referral[phone1]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :phone1_type, 'Phone Type'%>
+        <%= text_field_tag 'referral[phone1_type]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :phone2, 'Phone 2'%>
+        <%= text_field_tag 'referral[phone2]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :prefix, 'Prefix'%>
+        <%= text_field_tag 'referral[prefix]', nil, {:class => "form-control"} %>
+      </div>
+
+
+      <div class="form-group">
+        <%= label_tag :school_type, 'RN License'%>
+        <%= text_field_tag 'referral[rn_license]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :school_type, 'School Type'%>
+        <%= text_field_tag 'referral[school_type]', nil, {:class => "form-control"} %>
+      </div>
+
+
+
+      <div class="form-group">
+        <%= label_tag :state, 'State'%>
+        <%= text_field_tag 'referral[state]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :study_area_id, 'Study Area'%>
+        <%= text_field_tag 'referral[study_area_id]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :study_area_id, 'Study Areas '%>
+        <%= text_field_tag 'referral[study_area_ids]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :time_to_call, 'Time to call'%>
+        <%= text_field_tag 'referral[time_to_call]', nil, {:class => "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :time_to_call, 'US Citizen'%>
+        <%= text_field_tag 'referral[us_citizen]', nil, {:class => "form-control"} %>
+      </div>
+
+    </div>
+
+    <div class="col-md-12">
+      <%= submit_tag 'Search', :class=> "btn btn-success" %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,7 @@
+development:
+ adapter: postgresql
+ encoding: utf8
+ database: degree_search
+ username: postgres
+ password: postgres
+ host: 127.0.0.1
