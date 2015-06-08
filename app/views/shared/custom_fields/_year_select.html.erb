@@ -1,0 +1,6 @@
+<p>
+  <b>Question:</b> <%= field['question'] %>
+</p>
+<div class="col-md-6">
+  <%= select_year(Date.today, start_year: Time.now.year, end_year: 1950, class: 'form-control')%>
+</div>

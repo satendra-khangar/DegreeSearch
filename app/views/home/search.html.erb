@@ -1,4 +1,5 @@
 <table border="1" align="center" class="table">
+  
   <% @res.each do |res| %>
 	  <tr>
 	    <th align="center">School_id: <%= res["school_id"] %></th>
@@ -6,7 +7,7 @@
 
 		<tr>
 		  <td>  
-		  	<table style="width:100%" class="sub_table">
+		  	<table border="1" style="width:100%" class="sub_table">
 			  <tr class="heading">
 			  	<th>Name</th>
 			    <th>Campus</th>
@@ -19,6 +20,7 @@
 			    <td align="center"><%= c["campus"] %></td>
 			    <td align="center"><%= c["online"] %></td>
 			    <td align="center"><%= c["popularity"]%></td>
+			    <td><%= link_to "Click to next", custom_field_home_index_path(:referral_id => @referral.referral_id, :program_ids => c["id"]), method: :post, :class =>"next_button btn" %></td>
 			  </tr>
 			  <% end unless res["programs"].blank? %>
 
@@ -28,3 +30,9 @@
   <% end %>
 
 </table>
+
+<style>
+.next_button{
+	 text-align:right;
+}
+</style>

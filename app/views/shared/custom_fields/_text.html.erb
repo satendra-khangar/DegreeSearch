@@ -1,0 +1,7 @@
+<p>
+  <b>Question:</b> <%= field['question'] %>
+</p>
+<% html_options  = {:class => "form-control"} %>
+<div class="col-md-6">
+  <%= text_field_tag('field["name"]',  nil, field.required ? html_options.merge(:required => "required") : html_options ) %>
+</div>

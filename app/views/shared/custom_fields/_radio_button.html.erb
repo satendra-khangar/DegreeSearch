@@ -1,0 +1,9 @@
+<p>
+	<b>Question: </b><%= field['question'] %>
+</p>
+<% field['valid_value_choices'].each do |val| %>
+	<div class="col-md-12">
+		<%= radio_button_tag('field["name"]', val[1], checked = true, options = {}) %>
+		<%= label "field['name']", val[1], val[0] %>
+	</div>
+<% end %>

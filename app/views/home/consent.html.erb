@@ -1,0 +1,23 @@
+<div class="col-md-12">
+  <div class="col-md-12 well">
+    <%= form_tag(lead_home_index_path(:program_ids => params["program_ids"], :referral_id => params["referral_id"]), {:method => :post}) do %>
+      <div class="row col-md-12 well">
+      <% @consent.each do |c| %>
+        <% case c["input_method"] %>
+        <% when 'check_box'%>
+          <p>
+            <b>Main statement:</b> <%= c['main_statement'] %>
+          </p>
+          <div class="col-md-6">
+            <%= check_box_tag('[#{field["name"]}]', 'accepted', false)%>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+      <div class="col-md-12">
+        <%= submit_tag "submit", :class => "btn btn-primary" %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

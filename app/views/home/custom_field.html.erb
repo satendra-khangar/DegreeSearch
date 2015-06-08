@@ -1,0 +1,42 @@
+<div class="col-md-12">
+  <% unless @custom_fields.blank?  %>
+    <div class="col-md-12 well">
+   
+      <%= form_tag(consent_home_index_path(:program_ids => params["program_ids"], :referral_id => @custom.referral_id), {:method => :post}) do %>
+        <% @custom_fields.each do |field| %>
+          <div class="row col-md-12 well">
+            <% case field['input_method'] %>
+            <% when 'radio_button'%>
+              <%= render partial: '/shared/custom_fields/radio_button', :locals => {:field => field}  %>
+            <% when 'select'%>
+              <%= render partial: '/shared/custom_fields/select', :locals => {:field => field}  %>
+            <% when 'year_select'%>
+              <%= render partial: '/shared/custom_fields/year_select', :locals => {:field => field}  %>
+            <% when 'text_field'%>
+              <%= render partial: '/shared/custom_fields/text', :locals => {:field => field}  %>
+            <% end %>
+          </div>
+          <%#= hidden_field_tag 'field["program_ids"]', field['program_ids'] %>
+          <%#= hidden_field_tag 'field["referral_id"]', @prog_id %>
+          
+          <%= hidden_field_tag 'field["school_ids"]', field['school_ids'] %>
+          <%= hidden_field_tag 'field["name"]', field['name'] %>
+        <% end %>
+        <div class="col-md-12">
+          <%= submit_tag "Consent", :class => "btn btn-primary" %>
+        </div>
+
+      <% end %>
+    </div>
+
+  <% else %>
+    <div class="col-md-12">
+      <h3>No additional info require, please proceed further.</h3>
+    </div>
+    <div class="col-md-12">
+    <% @custom_fields.each do |field| %>
+      <%= link_to "Consent", consent_home_index_path(:name => field["name"], :school_ids => field["school_ids"]),  :class => "btn btn-primary" %>
+    </div>
+    <% end %>
+  <% end %>
+</div>

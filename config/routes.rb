@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :home do
     collection do
       post :search
+      post :custom_field
+      post :consent
+      post :lead
     end
   end
   # Example of regular route:
