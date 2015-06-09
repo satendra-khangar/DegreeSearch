@@ -1,38 +1,37 @@
 <table border="1" align="center" class="table">
-  
-  <% @res.each do |res| %>
-	  <tr>
-	    <th align="center">School_id: <%= res["school_id"] %></th>
-	  </tr>
+<% @res.each do |res| %>
+  <tr>
+    <th align="center">School_id: <%= res["school_id"] %></th>
+  </tr>
 
-		<tr>
-		  <td>  
-		  	<table border="1" style="width:100%" class="sub_table">
-			  <tr class="heading">
-			  	<th>Name</th>
-			    <th>Campus</th>
-			    <th>online</th>
-			    <th>Popularity</th>
-			  </tr>
-			  <% res["programs"].each do |c| %>
-			  <tr>
-			    <td align="center"><%= c["name"] %></td>
-			    <td align="center"><%= c["campus"] %></td>
-			    <td align="center"><%= c["online"] %></td>
-			    <td align="center"><%= c["popularity"]%></td>
-			    <td><%= link_to "Click to next", custom_field_home_index_path(:referral_id => @referral.referral_id, :program_ids => c["id"]), method: :post, :class =>"next_button btn" %></td>
-			  </tr>
-			  <% end unless res["programs"].blank? %>
+  <tr>
+    <td>  
+      <table border="1" style="width:100%" class="sub_table">
+        <tr class="heading">
+          <th>Name</th>
+          <th>Campus</th>
+          <th>online</th>
+          <th>Popularity</th>
+        </tr>
+        <% res["programs"].each do |c| %>
+          <tr>
+            <td align="center"><%= c["name"] %></td>
+            <td align="center"><%= c["campus"] %></td>
+            <td align="center"><%= c["online"] %></td>
+            <td align="center"><%= c["popularity"]%></td>
+            
+            <td><%= link_to "Click to next", custom_field_home_index_path(:referral_id => @referral.referral_id, :program_ids => c["id"], :school_ids => res["school_id"]), method: :post, :class =>"next_button btn" %></td>
+          </tr>
+        <% end unless res["programs"].blank? %>
 
-			</table>
-		  </td>
-		</tr>
-  <% end %>
-
+      </table>
+    </td>
+  </tr>
+<% end %>
 </table>
 
 <style>
 .next_button{
-	 text-align:right;
+text-align:right;
 }
 </style>

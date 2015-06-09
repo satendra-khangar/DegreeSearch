@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 
   def referral
+   
   end
 
   def search
@@ -15,7 +16,7 @@ class HomeController < ApplicationController
   def custom_field
     begin
       @custom = Referral.new params
-      @custom_fields = custom.custom_fields_values(params["referral_id"], params["program_ids"])
+      @custom_fields = @custom.custom_fields_values(params["referral_id"], params["program_ids"], params['school_ids'])
     rescue => e
       render :json => {:error => e.message }
     end
@@ -23,14 +24,11 @@ class HomeController < ApplicationController
 
   def consent
     @custom = Referral.new params
-    @consent = custom.consent(params[:filelds])
-    #render :json => @consent
+    @consent = @custom.consent(params)
   end
 
   def lead
     @custom = Referral.new params
-    @lead = custom.lead
-
-    render :json => @lead
+    @lead = @custom.lead(params)
   end
 end

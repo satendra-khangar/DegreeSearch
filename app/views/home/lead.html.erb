@@ -1,0 +1,17 @@
+<div>
+  <h2 id="lead">Lead created successfully</h2> 
+  <% @lead.each do |l| %>
+  <div>
+    <h4>Referral_id :</h4><h4><%= "#{l['referral_id']}"%></h4>
+    <h4>Program_id :</h4><h4><%= "#{l['program_id']}"%></h4>
+  </div> 
+  <% end %>
+</div>
+
+<style>
+
+#lead{
+  color: #6CEC6C;
+}
+
+</style>
