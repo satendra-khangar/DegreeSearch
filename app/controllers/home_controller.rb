@@ -6,8 +6,12 @@ class HomeController < ApplicationController
 
   def search
     begin     
-      @referral = Referral.new(params[:referral])
-      @res = @referral.search_school
+      @referral = Referral.new(params[:referral], true) 
+      if @referral.valid?
+        @res = @referral.search_school
+      else 
+        render 'referral'
+      end
     rescue => e
       render :json => {:error => e.message }
     end
