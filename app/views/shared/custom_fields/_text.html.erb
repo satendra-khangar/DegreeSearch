@@ -3,5 +3,5 @@
 </p>
 <% html_options  = {:class => "form-control"} %>
 <div class="col-md-6">
-  <%= text_field_tag("custom_field[#{field['name']}]",  nil, field.required ? html_options.merge(:required => "required") : html_options ) %>
+  <%= text_field_tag("custom_field[#{field['name']}]",  nil, html_options.merge(:required => "required") ) %>
 </div>

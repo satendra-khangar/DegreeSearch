@@ -12,8 +12,8 @@ class Referral
 
   attr_accessor :address1, :address2, :age_level, :city, :degree_level_id, :education_level_id, :email, :extended_leadid_token, :first_name, :gender, :hs_grad_year, :last_name, :military_affiliation, :military_branch, :military_relationship, :military_status, :months_until_start, :phone1, :phone1_type, :phone2, :prefix, :rn_license, :school_type, :state, :study_area_id, :study_area_ids, :time_to_call, :us_citizen, :zip
 
-  validates :address1, :address2, :age_level, :city, :degree_level_id, :education_level_id, :email, :extended_leadid_token, :first_name, :gender, :hs_grad_year, :last_name, :military_affiliation, :military_branch, :military_relationship, :military_status, :months_until_start, :phone1, :phone1_type, :phone2, :prefix, :rn_license, :school_type, :state, :study_area_id, :study_area_ids, :time_to_call, :us_citizen, :zip, presence: true
-
+  #validates :address1, :address2, :age_level, :city, :degree_level_id, :education_level_id, :email, :extended_leadid_token, :first_name, :gender, :hs_grad_year, :last_name, :military_affiliation, :military_branch, :military_relationship, :military_status, :months_until_start, :phone1, :phone1_type, :phone2, :prefix, :rn_license, :school_type, :state, :study_area_id, :study_area_ids, :time_to_call, :us_citizen, :zip, presence: true
+  validates :address1, :city, :phone1, :phone1_type, :phone2, :first_name, :last_name, :state, :zip, presence: true
   attr_accessor :referral_id, :program_ids, :custom_fields, :landing_url, :school_id
 
   def initialize(params, first_step = false)
