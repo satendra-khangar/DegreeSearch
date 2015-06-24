@@ -76,15 +76,14 @@ class Referral
     @program_ids = params[:program_ids]
     @url = params[:landing_url]
     @fields = params[:fields]
-    
     self.class.post("/api/lip/leads/submit",
       {
         :body =>{
-                  :referral_id => "#{@referral_id}",
-                  :url => "#{@url}",
+                  :referral_id => "#{@referral_id}".to_i,
+                  :url => "#{@url}".to_s,
                   :program_ids => "#{@program_ids}",
-                  :consent => "#{CONSENT}",
-                  :fields => "#{@fields}"
+                  :consent => "#{CONSENT}".to_s,
+                  :field_values => "#{@fields}"
                 }.to_json,
         :basic_auth =>  { :username => "integration", :password => "g1v1ngL1pS3rv1c3" },
         :headers => {'Content-Type' => 'application/json', 'Accept' => 'application/json'}

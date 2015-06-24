@@ -32,7 +32,11 @@ class HomeController < ApplicationController
   end
 
   def lead
-    @custom = Referral.new params
-    @lead = @custom.lead(params)
+    begin
+      @custom = Referral.new params
+      @lead = @custom.lead(params)
+    rescue => e
+      render :json => {:error => e.message }
+    end
   end
 end

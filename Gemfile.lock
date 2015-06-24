@@ -50,6 +50,8 @@ GEM
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (5.0.3)
+      railties (>= 3.2.16)
     json (1.8.3)
     libv8 (3.16.14.7)
     mail (2.6.3)
@@ -138,6 +140,7 @@ DEPENDENCIES
   httparty (~> 0.13.5)
   jbuilder (~> 2.0)
   jquery-rails
+  jquery-ui-rails
   pg
   pry (~> 0.10.1)
   rails (= 4.1.6)

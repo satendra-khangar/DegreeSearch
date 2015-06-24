@@ -1,0 +1,13 @@
+<p>
+  <b>Question:</b> <%= field['question'] %>
+</p>
+<div class="col-md-6">
+  <%= text_field_tag("custom_field[#{field['name']}]",  nil, :id => "datepicker") %>
+</div>
+
+
+<script>
+$(function() {
+  $("#datepicker").datepicker({dateFormat: 'dd-mm-yy'});
+});
+</script>

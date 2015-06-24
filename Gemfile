@@ -33,6 +33,8 @@ gem 'httparty', '~> 0.13.5'
 gem 'pry', '~> 0.10.1'
 gem 'rails_12factor', group: :production
 
+gem 'jquery-ui-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
